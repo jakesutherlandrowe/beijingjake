@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Beijing Jake — Chinese idioms, culture and language</title>
+<meta name="description" content="Chinese four-character idioms (chengyu) explained simply, with the stories behind them. Free HSK drill, resources and workshops.">
+<link rel="canonical" href="https://beijingjake.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beijing Jake">
+<meta property="og:title" content="Beijing Jake — Chinese idioms, culture and language">
+<meta property="og:description" content="Chinese four-character idioms explained simply, with the stories behind them. Free HSK drill and resources.">
+<meta property="og:url" content="https://beijingjake.com/">
+<meta property="og:image" content="https://beijingjake.com/icons/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#1B3A5C">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="BJ Drill">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+
+<style>
+:root {
+  --bg: #f4f7f5; --surface: #ffffff; --ink: #1b3a5c; --muted: #5c6f80; --line: #dce4e4;
+  --brand: #1b3a5c;          /* navy — structure and actions */
+  --on-brand: #ffffff;
+  --jade: #1f7a54;           /* jade, darkened for safe contrast on light */
+  --jade-bright: #2d9b6e;    /* brand jade — decoration and fills only */
+  --jade-soft: #e8f4f0;
+  --font-ui: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-zh: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1b26; --surface: #16293a; --ink: #e8eef2; --muted: #9aaab8; --line: #27405a;
+    --brand: #8fb6dc; --on-brand: #0e1b26;
+    --jade: #4fc79a; --jade-bright: #4fc79a; --jade-soft: #14332a;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-ui); font-size: 18px; line-height: 1.55;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap {
+  max-width: 660px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 56px; display: flex; flex-direction: column; gap: 28px;
+}
+.fret { height: 12px; background: var(--jade-bright);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Cpath d='M0 10.5H16M13 10.5V1.5H3.5V7.5H9.5V4.5H6.5' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E") repeat-x left center / 16px 12px;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Cpath d='M0 10.5H16M13 10.5V1.5H3.5V7.5H9.5V4.5H6.5' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E") repeat-x left center / 16px 12px; }
+header { display: flex; flex-direction: column; gap: 10px; }
+.mark { font-family: var(--font-zh); font-size: 56px; line-height: 1; color: var(--brand); }
+.mark small { font-family: var(--font-ui); font-size: 15px; color: var(--jade); margin-left: 8px; vertical-align: middle; }
+h1 { margin: 0; font-size: clamp(34px, 8vw, 48px); line-height: 1.05; }
+.lede { margin: 0; color: var(--muted); max-width: 55ch; }
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px; }
+nav.jump a {
+  font-size: 15px; font-weight: 600; text-decoration: none;
+  color: var(--jade); background: var(--jade-soft);
+  border-radius: 999px; padding: 6px 14px;
+}
+nav.jump a:focus-visible { outline: 3px solid var(--jade); outline-offset: 2px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+.card h2 { margin: 0; font-size: 22px; }
+.card p { margin: 0; color: var(--muted); }
+.card ul { margin: 0; padding-left: 20px; color: var(--muted); }
+.card li { margin-bottom: 6px; }
+.card a:not(.btn) { color: var(--jade); }
+.btn { align-self: flex-start; display: inline-block; font-weight: 700; border-radius: 999px; padding: 10px 22px; background: var(--brand); color: var(--on-brand); text-decoration: none; border: 0; font-size: 17px; font-family: inherit; cursor: pointer; }
+.btn:focus-visible { outline: 3px solid var(--jade); outline-offset: 3px; }
+.install { font-size: 15px; color: var(--muted); margin: 0; }
+.soon { font-size: 14px; font-weight: 600; color: var(--jade); background: var(--jade-soft); border-radius: 999px; padding: 3px 12px; align-self: flex-start; }
+form.signup { display: flex; flex-wrap: wrap; gap: 10px; }
+form.signup input[type="email"] {
+  flex: 1 1 220px; font: inherit; font-size: 17px; padding: 10px 14px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); color: var(--ink);
+}
+form.signup input[type="email"]:focus-visible { outline: 3px solid var(--jade); outline-offset: 1px; }
+.social { display: flex; flex-wrap: wrap; gap: 10px; }
+.social a { font-weight: 600; text-decoration: none; color: var(--brand); border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; background: var(--surface); }
+.social a:focus-visible { outline: 3px solid var(--jade); outline-offset: 2px; }
+footer { font-size: 14px; color: var(--muted); }
+footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <div class="fret" aria-hidden="true"></div>
+
+  <header>
+    <div class="mark" lang="zh-CN">京<small>jīng</small></div>
+    <h1>Beijing Jake</h1>
+    <p class="lede">Chinese four-character idioms, explained simply — with the stories behind them.</p>
+  </header>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#drill">Drill</a>
+    <a href="#resources">Resources</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#members">Members</a>
+    <a href="#enquiries">Enquiries</a>
+  </nav>
+
+  <section class="card" id="drill" aria-labelledby="drill-h">
+    <h2 id="drill-h">HSK 1–3 Word Drill</h2>
+    <p>134 everyday words with pinyin, meanings, example sentences and memory tips. Type your answer or mark yourself. Works offline once you've opened it.</p>
+    <a class="btn" href="drill/">Start the drill</a>
+    <p class="install">Keep it as an app: on a Mac in Safari, choose File → Add to Dock; in Chrome, click the install icon in the address bar; on an iPhone, tap Share → Add to Home Screen.</p>
+  </section>
+
+  <section class="card" id="resources" aria-labelledby="resources-h">
+    <h2 id="resources-h">Resources</h2>
+    <p>Free material to go alongside the videos.</p>
+    <ul>
+      <li>HSK 1–3 word drill — <a href="drill/">available now</a></li>
+      <li>Chengyu library: every idiom covered on the channel, searchable</li>
+      <li>Song lyric breakdowns, line by line, with vocabulary sheets</li>
+      <li>Printable idiom cards</li>
+    </ul>
+    <p class="soon">More coming soon</p>
+  </section>
+
+  <section class="card" id="newsletter" aria-labelledby="newsletter-h">
+    <h2 id="newsletter-h">Get the newsletter</h2>
+    <p>One email a month: new idioms, resources as they land, and anything worth knowing. No spam, unsubscribe any time.</p>
+
+    <!-- ===========================================================
+         REPLACE THE FORM BELOW with the embed code from your email
+         tool (Kit, beehiiv, Sender). Until you do, it does nothing
+         — it is only the right shape and styling.
+         =========================================================== -->
+    <form class="signup" action="#" method="post" aria-label="Newsletter signup">
+      <label class="visually-hidden" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button class="btn" type="submit">Sign up</button>
+    </form>
+  </section>
+
+  <section class="card" id="members" aria-labelledby="members-h">
+    <h2 id="members-h">Members</h2>
+    <p>A one-off fee for lifetime access to everything: full transcripts and PDFs, the complete idiom archive, downloadable audio and extra drills.</p>
+    <p class="soon">Opening soon</p>
+    <p class="install">Want in when it opens? Join the newsletter above and you'll hear first — founding members get the lowest price it will ever be.</p>
+  </section>
+
+  <section class="card" id="enquiries" aria-labelledby="enquiries-h">
+    <h2 id="enquiries-h">Enquiries</h2>
+    <p>Workshops for schools, corporate cross-cultural sessions, sponsorship and collaborations. I taught all ages in China for several years and now work the other way round.</p>
+    <!-- Swap this address for your own domain address once email is set up. -->
+    <a class="btn" href="mailto:hello@beijingjake.com?subject=Enquiry%20via%20beijingjake.com">Get in touch</a>
+  </section>
+
+  <section aria-labelledby="social-h">
+    <h2 id="social-h" class="lede" style="font-size:18px;margin-bottom:10px;">Find the videos</h2>
+    <div class="social">
+      <a href="https://www.tiktok.com/@beijing.jake" rel="me noopener">TikTok</a>
+      <a href="https://www.instagram.com/beijingjakee" rel="me noopener">Instagram</a>
+      <a href="https://www.youtube.com/@beijingjake" rel="me noopener">YouTube</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Beijing Jake</footer>
+</main>
+
+<script>
+if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("./sw.js").catch(() => {});
+</script>
+
+</body>
+</html>
