@@ -88,3 +88,12 @@ footer a { color: var(--muted); }
 nav.zone-nav { display: flex; flex-wrap: wrap; gap: 8px; }
 nav.zone-nav a.home { background: var(--brand); color: var(--on-brand); }
 .zone-head h1 { font-size: clamp(30px, 7vw, 40px); }
+
+/* Vocab Tester tile on the home page: jade border and a New badge to draw the eye */
+.zones a { position: relative; }
+.zones a.featured { border: 2px solid var(--jade-bright); }
+.zones .badge {
+  position: absolute; top: 10px; right: 10px;
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--jade); color: var(--surface); border-radius: 999px; padding: 3px 9px;
+}
