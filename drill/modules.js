@@ -16,25 +16,84 @@
 window.BJ_GROUPS = [
   {
     "id": "gcse",
+    "order": 1,
     "title": "GCSE",
-    "blurb": "Vocabulary lists for GCSE Chinese."
+    "blurb": "Vocabulary lists for GCSE Chinese. Pick your exam board."
   },
   {
     "id": "gcse/aqa",
     "parent": "gcse",
+    "order": 1,
     "title": "AQA",
     "blurb": "The AQA GCSE Chinese (8673) vocabulary list. Take it heading by heading and tick each one off, or do it all in one go."
   },
   {
     "id": "gcse/edexcel",
     "parent": "gcse",
+    "order": 2,
     "title": "Pearson Edexcel",
     "soon": true
   },
   {
     "id": "hsk",
+    "order": 2,
     "title": "HSK",
     "blurb": "Words from the HSK, the official Chinese proficiency test."
+  },
+  {
+    "id": "hsk/1",
+    "parent": "hsk",
+    "order": 1,
+    "title": "HSK 1",
+    "soon": true
+  },
+  {
+    "id": "hsk/2",
+    "parent": "hsk",
+    "order": 2,
+    "title": "HSK 2",
+    "soon": true
+  },
+  {
+    "id": "hsk/3",
+    "parent": "hsk",
+    "order": 3,
+    "title": "HSK 3",
+    "soon": true
+  },
+  {
+    "id": "hsk/4",
+    "parent": "hsk",
+    "order": 4,
+    "title": "HSK 4",
+    "soon": true
+  },
+  {
+    "id": "hsk/5",
+    "parent": "hsk",
+    "order": 5,
+    "title": "HSK 5",
+    "soon": true
+  },
+  {
+    "id": "hsk/6",
+    "parent": "hsk",
+    "order": 6,
+    "title": "HSK 6",
+    "soon": true
+  },
+  {
+    "id": "hsk/7-9",
+    "parent": "hsk",
+    "order": 7,
+    "title": "HSK 7–9",
+    "soon": true
+  },
+  {
+    "id": "alevel",
+    "order": 3,
+    "title": "A-level",
+    "soon": true
   }
 ];
 

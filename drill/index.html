@@ -103,6 +103,26 @@ h1 { margin: 0; font-size: clamp(28px, 6vw, 38px); line-height: 1.1; text-wrap: 
 .tick { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--good); color: var(--surface); font-size: 13px; font-weight: 800; margin-right: 6px; vertical-align: -4px; }
 .sec-h { margin: 10px 0 0; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .group-progress { display: flex; flex-direction: column; gap: 6px; }
+.title-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+nav.zone-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav.zone-nav a { font-size: 15px; font-weight: 600; text-decoration: none; color: var(--cobalt); background: var(--cobalt-soft); border-radius: 999px; padding: 6px 14px; }
+nav.zone-nav a.home { background: var(--cobalt); color: var(--on-cobalt); }
+nav.zone-nav a:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 2px; }
+/* big buttons for GCSE, HSK, A-level and the exam boards */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+.tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; min-height: 104px; padding: 16px 12px; text-decoration: none; color: var(--cobalt); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.tiles.big .tile { min-height: 150px; }
+.tiles.huge { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.tiles.huge .tile { min-height: 220px; }
+a.tile:hover { border-color: var(--cobalt); }
+a.tile:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+.tile-name { font-size: clamp(22px, 5vw, 30px); font-weight: 700; line-height: 1.15; }
+.tile-sub { font-size: 14px; font-weight: 600; color: var(--muted); }
+.tile-sub.done { color: var(--good); }
+.tile.soon { opacity: .55; }
+#module-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+#module-list .tile { padding: 14px 6px; }
+.tile-name { overflow-wrap: anywhere; }
 
 /* module screen */
 .big-line { margin: 0; font-size: 26px; font-weight: 700; line-height: 1.2; }
@@ -210,7 +230,7 @@ footer .zh { font-family: var(--font-zh); }
 <body>
 
 <main class="wrap">
-  <div class="appbar">
+  <div class="appbar" id="appbar">
     <a href="../index.html" class="home-link">← Beijing Jake</a>
     <div class="tools">
       <button class="icon-btn" id="help-open" type="button" aria-label="Help and FAQs">?</button>
@@ -223,12 +243,28 @@ footer .zh { font-family: var(--font-zh); }
 
   <!-- All lists -->
   <section id="scr-modules" class="stack" style="gap:20px">
+    <nav class="zone-nav" aria-label="Site">
+      <a class="home" href="../index.html">Home</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../about.html">About</a>
+      <a href="../members.html">Members Zone</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../donate.html">Donate</a>
+    </nav>
     <header>
-      <span class="eyebrow">Beijing Jake</span>
-      <h1>Vocab Tester</h1>
+      <div class="title-row">
+        <h1>Vocab Tester</h1>
+        <div class="tools">
+          <button class="icon-btn" data-open="help" type="button" aria-label="Help and FAQs">?</button>
+          <button class="icon-btn" data-open="settings" type="button" aria-label="Settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+          </button>
+        </div>
+      </div>
       <p class="lede">Pick a list.</p>
     </header>
-    <div class="module-list" id="module-list"></div>
+    <h2 class="sec-h">Modules</h2>
+    <div class="tiles big" id="module-list"></div>
     <p class="hint" id="no-modules" hidden>The word lists didn't load. Check your connection and refresh.</p>
   </section>
 
@@ -663,6 +699,7 @@ function finishRound() {
 /* ================= screens ================= */
 function show(id) {
   ["scr-modules", "scr-group", "scr-module", "scr-drill"].forEach(s => { $(s).hidden = s !== id; });
+  $("appbar").hidden = id === "scr-modules";
   $("review").hidden = true;
   updateResetZone();
 }
@@ -675,7 +712,7 @@ function statusText(m) {
   return "✓ Completed in " + takesText(s.last.take);
 }
 const isDone = (m) => { const s = progress[m.id]; return !!(s && (s.stage === "done" || (s.stage === "fresh" && s.best))); };
-const childGroups = (id) => GROUPS.filter(g => (g.parent || "") === (id || "")).sort((a, b) => a.title.localeCompare(b.title));
+const childGroups = (id) => GROUPS.filter(g => (g.parent || "") === (id || "")).sort((a, b) => ((a.order || 99) - (b.order || 99)) || a.title.localeCompare(b.title));
 const groupModules = (id) => MODULES.filter(m => m.group === id);
 function testsUnder(id) {   /* every test inside a group and its subgroups, leaving out the all-in-one modules */
   return GROUPS.filter(g => g.id === id || g.id.startsWith(id + "/")).flatMap(g => groupModules(g.id)).filter(m => !m.all);
@@ -701,20 +738,13 @@ function moduleCard(m, compact) {
   return a;
 }
 function groupCard(g) {
-  if (g.soon) {
-    const d = el("div", "module-card soon"); d.setAttribute("aria-disabled", "true");
-    d.append(el("h2", "mc-title", g.title), el("p", "mc-status", "Coming soon"));
-    return d;
-  }
-  const a = el("a", "module-card"); a.href = href(g.id);
-  a.appendChild(el("h2", "mc-title", g.title));
-  if (g.blurb) a.appendChild(el("p", "mc-blurb", g.blurb));
   const tests = testsUnder(g.id), done = tests.filter(isDone).length;
-  const subs = childGroups(g.id);
-  const line = tests.length ? plural(tests.length, "test") + (done ? " · " + done + " done" : "")
-             : subs.length ? subs.map(x => x.title + (x.soon ? " coming soon" : "")).join(" · ") : "";
-  if (line) a.appendChild(el("p", "mc-status" + (tests.length && done === tests.length ? " done" : ""), line));
-  return a;
+  const t = el(g.soon ? "div" : "a", "tile" + (g.soon ? " soon" : ""));
+  if (g.soon) t.setAttribute("aria-disabled", "true"); else t.href = href(g.id);
+  t.appendChild(el("span", "tile-name", g.title));
+  const line = g.soon ? "Coming soon" : tests.length ? plural(tests.length, "test") + (done ? " · " + done + " done" : "") : "";
+  if (line) t.appendChild(el("span", "tile-sub" + (tests.length && done === tests.length ? " done" : ""), line));
+  return t;
 }
 function leaveForList() { if (!$("scr-drill").hidden) pauseRound(); M = null; ST = null; }
 function showModules() {
@@ -735,8 +765,15 @@ function showGroup(g) {
   $("g-title").textContent = g.title;
   $("g-desc").textContent = g.blurb || ""; $("g-desc").hidden = !g.blurb;
   const body = $("g-body"); body.textContent = "";
-  childGroups(g.id).forEach(c => body.appendChild(groupCard(c)));
-  const mods = groupModules(g.id);
+  const mods = groupModules(g.id), kids = childGroups(g.id);
+  const tileGrid = () => {
+    if (!kids.length) return;
+    if (mods.length) body.appendChild(el("h2", "sec-h", "Levels"));
+    const grid = el("div", "tiles " + (kids.length <= 2 ? "huge" : kids.length <= 3 ? "big" : ""));
+    kids.forEach(c => grid.appendChild(groupCard(c)));
+    body.appendChild(grid);
+  };
+  if (!mods.length) tileGrid();
   const tests = mods.filter(m => !m.all);
   if (tests.length > 1) {
     const done = tests.filter(isDone).length;
@@ -751,6 +788,7 @@ function showGroup(g) {
     if (m.section && m.section !== section) { section = m.section; body.appendChild(el("h2", "sec-h", section)); }
     body.appendChild(moduleCard(m, tests.length > 1));
   });
+  if (mods.length) tileGrid();
   document.title = g.title + " · Vocab Tester";
   show("scr-group");
   window.scrollTo(0, 0);
@@ -1338,7 +1376,10 @@ document.querySelectorAll('#dlg-settings .seg input[type="radio"]').forEach(i =>
 $("set-audio").addEventListener("change", (e) => { settings.audio = e.target.checked; saveSettings(); settingsChanged = true; });
 $("set-extras").addEventListener("change", (e) => { settings.extras = e.target.checked; saveSettings(); settingsChanged = true; });
 $("test-voice").addEventListener("click", () => { pickVoice(); $("voice-status").textContent = "Playing…"; speak("你好", () => { $("voice-status").textContent = "Playing " + (zhVoice ? zhVoice.name : "your device's default voice") + ". If you heard 你好 nǐ hǎo the sound works. " + (voiceNote || ""); }); });
-$("settings-open").addEventListener("click", () => { settingsChanged = false; syncSettings(); openDlg($("dlg-settings")); });
+function openSettings() { settingsChanged = false; syncSettings(); openDlg($("dlg-settings")); }
+$("settings-open").addEventListener("click", openSettings);
+document.querySelectorAll('[data-open="settings"]').forEach(b => b.addEventListener("click", openSettings));
+document.querySelectorAll('[data-open="help"]').forEach(b => b.addEventListener("click", () => openDlg($("dlg-help"))));
 $("dlg-settings").addEventListener("close", () => {
   if (!settingsChanged) return;
   settingsChanged = false;
