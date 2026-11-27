@@ -1,11 +1,19 @@
 // Keeps the site working offline. Network first, so updates show straight away.
 // Bump CACHE when you change what's in ASSETS.
-const CACHE = "bj-v2";
+const CACHE = "bj-v4";
 const ASSETS = [
   "./",
   "./index.html",
+  "./style.css",
+  "./tester.html",
+  "./donate.html",
+  "./contact.html",
+  "./about.html",
+  "./members.html",
+  "./resources.html",
   "./drill/",
   "./drill/index.html",
+  "./drill/modules.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

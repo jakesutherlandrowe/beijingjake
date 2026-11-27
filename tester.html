@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vocab Tester | Beijing Jake</title>
+<link rel="canonical" href="https://beijingjake.uk/tester.html">
+<meta name="theme-color" content="#1B3A5C">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="BJ Drill">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="wrap">
+  <div class="fret" aria-hidden="true"></div>
+
+  <nav class="zone-nav" aria-label="Site">
+    <a class="home" href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="members.html">Members Zone</a>
+    <a href="resources.html">Resources</a>
+    <a href="donate.html">Donate</a>
+  </nav>
+
+  <header class="zone-head">
+    <h1>Vocab Tester</h1>
+  </header>
+
+  <section class="card" aria-labelledby="m1-h">
+    <h2 id="m1-h">HSK 1–3 Word Drill</h2>
+    <p>134 everyday words with pinyin, meanings, example sentences and memory tips. Type your answer or mark yourself. Works offline once you've opened it.</p>
+    <a class="btn" href="drill/index.html">Start the drill</a>
+    <p class="install">Keep it as an app: on a Mac in Safari, choose File → Add to Dock; in Chrome, click the install icon in the address bar; on an iPhone, tap Share → Add to Home Screen.</p>
+  </section>
+
+  <section class="card" aria-labelledby="m2-h">
+    <h2 id="m2-h">More modules</h2>
+    <p class="soon">Coming shortly</p>
+  </section>
+
+  <footer>© 2026 Beijing Jake</footer>
+</main>
+
+<script>
+if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("./sw.js").catch(() => {});
+</script>
+
+</body>
+</html>
